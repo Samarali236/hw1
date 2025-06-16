@@ -24,3 +24,6 @@ while choice !=4 :
         else:
             print("Dear user,you do not have enough funds for this withdrawal, please check your balance or try a smaller amount")
 
+    elif choice==4:
+        print("program ended")
+        
