@@ -16,3 +16,11 @@ while choice !=4 :
         deposite=float(input("Please enter the amount you would like to deposit: "))
         balance[0] += deposite
         print("Your current balance is: "+str(balance[0])+"$")
+    elif choice==3:
+        withdraw=float(input("Please enter the amount you would like to withdraw: "))
+        if  withdraw <= balance[0]  :
+            balance[0]-=withdraw
+            print("Your current balance is: "+str(balance[0])+"$")
+        else:
+            print("Dear user,you do not have enough funds for this withdrawal, please check your balance or try a smaller amount")
+
