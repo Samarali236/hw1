@@ -1,5 +1,6 @@
-balance =1000
 choice=0
+auth=False
+balance =1000
 deposite=0
 transcount=0
 faildwithcount=0
@@ -9,9 +10,10 @@ userpass=""
 while choice !=6:
     userpass = input("Please enter your password: ")
     if userpass == password :
-     choice = 0
-     print("login successfully! ")
-    while choice !=5 :
+        auth=True
+        print("login successfully! ")
+
+    while auth:
         print("""
         Welcome to the ATM
         1. Check Balance
@@ -24,6 +26,7 @@ while choice !=6:
         choice=int(input("please enter your choice: "))
         if choice ==1:
             print("Your balance is: "+str(balance)+"$")
+
         elif choice==2:
             deposite= float(input("Please enter the amount you would like to deposit: "))
             if deposite > 0:
@@ -46,19 +49,26 @@ while choice !=6:
                     print("Dear User, Please enter a valid amount for withdrawwal process")
                 if faildwithcount>3:
                     print("WARNING! more than 3 failed withdrawals were attempted")
+
         elif choice==4:
             print(" Dear user, your total number of successfull transactions is : "+ str(transcount))
+
         elif choice==5:
             print("Logging out")
+            auth=False
+            balance =1000
+            deposite=0
+            transcount=0
+            faildwithcount=0
             break
+
         elif choice == 6:
             print("program ended, Thank you for using our ATM")
-            break
+            exit()
         else:
             print("Invalid number, Please choose between 1 and 5")
     else:
         print("Incorrect password, try another password")
 
 
-    
-    
+
