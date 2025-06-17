@@ -1,4 +1,4 @@
-balance =[1000] 
+balance =1000
 choice=0
 deposite=0
 transcount=0
@@ -25,18 +25,18 @@ while choice !=5 :
           """)
     choice=int(input("please enter your choice: "))
     if choice ==1:
-        print("Your balance is: "+str(balance[0])+"$")
+        print("Your balance is: "+str(balance)+"$")
     elif choice==2:
         deposite=float(input("Please enter the amount you would like to deposit: "))
-        balance[0] += deposite
+        balance += deposite
         transcount+=1
-        print("Your current balance is: "+str(balance[0])+"$")
+        print("Your current balance is: "+str(balance)+"$")
     elif choice==3:
         withdraw=float(input("Please enter the amount you would like to withdraw: "))
-        if  withdraw<= balance[0]:
-            balance[0]-=withdraw
+        if  withdraw<= balance:
+            balance-=withdraw
             transcount+=1
-            print("Your current balance is: "+str(balance[0])+"$")
+            print("Your current balance is: "+str(balance)+"$")
         else:
             faildwithcount+=1
             print("Dear user,you do not have enough funds for this withdrawal, please check your balance or try a smaller amount")
