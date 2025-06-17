@@ -2,6 +2,8 @@ balance =[1000]
 choice=0
 deposite=0
 transcount=0
+faildwithcount=0
+
 while choice !=5 :
     print("""
     Welcome to the ATM
@@ -26,8 +28,10 @@ while choice !=5 :
             transcount+=1
             print("Your current balance is: "+str(balance[0])+"$")
         else:
+            faildwithcount+=1
             print("Dear user,you do not have enough funds for this withdrawal, please check your balance or try a smaller amount")
-            
+            if faildwithcount>3:
+                print("WARNING! more than 3 failed withdrawals were attempted")
     elif choice==4:
         print(" Dear user, your total number of successfull transactions is : "+ str(transcount))
     elif choice==5:
