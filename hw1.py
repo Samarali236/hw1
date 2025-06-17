@@ -3,6 +3,16 @@ choice=0
 deposite=0
 transcount=0
 faildwithcount=0
+password= "qwerty"
+userpass=""
+
+while True:
+    userpass=input("Please enter your password: ")
+    if userpass == password :
+     print("login successfully! ")
+     break
+    else:
+     print("Incorrect password, try another password")
 
 while choice !=5 :
     print("""
